@@ -41,11 +41,36 @@ En sortie: [
 ]
 
  */
+const vegeTbl = [
+  {
+    food: 'Bacon',
+    isVegetarian: false
+  },
+  {
+    food: 'Sausage',
+    isVegetarian: false
+  },
+  {
+    food: 'Tofu',
+    isVegetarian: true
+  },
+  {
+    food: 'Chick Pea',
+    isVegetarian: true
+  }
+]
 
-function getFoodCategories(foods) {
+function getFoodCategories(string) {
+  result = string.map(function(param){
+  if(param.isVegetarian){
+    return param.food + " is suitable for vegetarians"
+  }
+  else{return param.food + " is not suitable for vegetarians"}
+  });
+  return result
 }
 
-
+getFoodCategories(vegeTbl);
 
 // Ne pas modifier l'export
 module.exports = getFoodCategories;

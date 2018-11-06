@@ -39,6 +39,13 @@ Exemple d'entrée:
  */
 
 function searchWordFilter(items, search) {
+  const result = items.filter(function(param){
+    param = param.toLowerCase()
+    if(param.includes(search)){
+      return param
+    }
+  })
+  return result
 }
 
 // Ne pas modifier l'export

@@ -50,8 +50,17 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
   }
 ]
 */
+const tableau = [1, 3, 4.5, 7]
 
 function getCirclesProperties(radiuses) {
+  const result = radiuses.map(function(radius){
+    const cercle = {}
+    cercle.circumference = (Math.PI * 2 * radius).toFixed(3)
+    cercle.surface = (Math.PI * radius * radius).toFixed(3)
+    cercle.radius = radius
+    return cercle
+  });
+  return result
 }
 
 
